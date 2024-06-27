@@ -1,31 +1,58 @@
-import { Component } from "react"
+import { Component } from "react";
 
-import {NavElement, NetFlixLogo, LanguageIcon} from './styledComponent'
+import {
+  NavElement,
+  NetFlixLogo,
+  LanguageIcon,
+  LanguageSelectContainer,
+  SelectElement,
+  OptionElement,
+  SignInButton,
+  SignInContainer,
+  AnchorButtonContianer,
+} from "./styledComponent";
 
 class Header extends Component {
-    state = {currentLanguage : "English"}
+  state = { currentLanguage: "English" };
 
-    handleChange = (event) =>{
-        this.setState({currentLanguage : event.target.value})
-    } 
+  handleChange = (event) => {
+    this.setState({ currentLanguage: event.target.value });
+  };
 
-    render(){
-        const {currentLanguage} = this.state
-        return(
-                <NavElement>
-                    <NetFlixLogo src = "https://res.cloudinary.com/dxa4rbmrj/image/upload/v1719471028/Netflix_Logo_PMS_czwo5z.png" alt = "logo" />
-                    
-                    <div>
-                    <LanguageIcon />
-                        <select id="language" value={currentLanguage} onChange={this.handleChange}>
-                            <option value = "English" >English</option>
-                            <option value = " हिन्दी" > हिन्दी</option>
-                        </select>
-                    </div>
-                </NavElement>
-        )
-    }
-
+  render() {
+    const { currentLanguage } = this.state;
+    return (
+      <NavElement>
+        <NetFlixLogo
+          src="https://res.cloudinary.com/dxa4rbmrj/image/upload/v1719471028/Netflix_Logo_PMS_czwo5z.png"
+          alt="logo"
+        />
+        <SignInContainer>
+          <LanguageSelectContainer>
+            <LanguageIcon />
+            <SelectElement
+              value={currentLanguage}
+              id="language"
+              onChange={this.handleChange}
+            >
+              <OptionElement value="English">English</OptionElement>
+              <OptionElement value=" हिन्दी"> हिन्दी</OptionElement>
+            </SelectElement>
+          </LanguageSelectContainer>
+          <AnchorButtonContianer>
+            <SignInButton
+              role="button"
+              href="/in/login"
+              id="signIn"
+              data-uia="header-login-link"
+            >
+              Sign In
+            </SignInButton>
+          </AnchorButtonContianer>
+        </SignInContainer>
+      </NavElement>
+    );
+  }
 }
 
-export default Header
+export default Header;
