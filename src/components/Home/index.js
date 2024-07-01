@@ -1,4 +1,7 @@
 import { Component } from "react";
+
+import { FaAngleRight } from "react-icons/fa6";
+
 import Header from "../Header/index";
 
 import {
@@ -15,17 +18,21 @@ import {
   Form,
   FormContiaer,
   Input,
+  GetStartedContainer,
+  GetButton,
+  ButtonContainer,
 } from "./styledComponent";
 
 class Home extends Component {
-  state = { email: "", focussed: false };
+  state = { email: "", focused: false };
 
   updateFocussedToTrue = () => {
-    this.setState({ focussed: true });
+    this.setState({ focused: true });
   };
 
   updateFocussedToFalse = () => {
-    this.setState({ focussed: false });
+    const { email } = this.state;
+    this.setState({ focused: email !== "" });
   };
 
   updateEmail = (event) => {
@@ -33,7 +40,7 @@ class Home extends Component {
   };
 
   render() {
-    const { focussed, value } = this.state;
+    const { focused, email } = this.state;
 
     return (
       <MainContainer>
@@ -54,22 +61,28 @@ class Home extends Component {
                   Ready to Watch? Enter your email to create or restart your
                   membership.
                 </FormHeading>
-                <EmailContainer>
-                  <Label
-                    htmlfof="email"
-                    focussed={focussed}
-                    hasValue={value !== ""}
-                  >
-                    Email address
-                  </Label>
-                  <Input
-                    type="email"
-                    id="email"
-                    onChange={this.updateEmail}
-                    onFocus={this.updateFocussedToTrue}
-                    onBlur={this.updateFocussedToFalse}
-                  />
-                </EmailContainer>
+                <GetStartedContainer>
+                  <EmailContainer>
+                    <>
+                      <Label htmlfof="email" focused={focused || email}>
+                        Email address
+                      </Label>
+                      <Input
+                        type="email"
+                        id="email"
+                        onChange={this.updateEmail}
+                        onFocus={this.updateFocussedToTrue}
+                        onBlur={this.updateFocussedToFalse}
+                      />
+                    </>
+                  </EmailContainer>
+                  <ButtonContainer>
+                    <GetButton type="submit">
+                      Get Started
+                      <FaAngleRight />
+                    </GetButton>
+                  </ButtonContainer>
+                </GetStartedContainer>
               </Form>
             </FormContiaer>
           </HeadingContainer>

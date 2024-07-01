@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const MainContainer = styled.div`
   width: 98vw;
@@ -36,6 +36,7 @@ export const TopContianer = styled.div`
   position: relative;
   display: inline-block;
   width: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +46,7 @@ export const TopContianer = styled.div`
 export const BackgroundImage = styled.img`
   width: 100%;
   display: block;
-  height: auto;
+  height: 100vh;
 `;
 
 export const HeadingContainer = styled.div`
@@ -62,61 +63,99 @@ export const HeadingContainer = styled.div`
 export const Heading = styled.h1`
   font-size: 50px;
   margin-bottom: 0px;
+  @media screen and (max-width: 768px) {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+  }
 `;
 
 export const AnyWhereText = styled.p`
   font-size: 25px;
   margin-top: 0px;
+  @media screen and (max-width: 768px) {
+    margin: 1rem 0 0;
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 `;
 
 export const FormHeading = styled.h1`
   font-size: 22px;
   font-weight: 400;
+  @media screen and (max-width: 768px) {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+  }
 `;
 
 export const Label = styled.label`
-  top: ${(props) => (props.focussed || props.hasValue ? "-20px" : "20px")};
-  left: 0;
-  transform: translateY(
-    ${(props) => (props.focussed || props.hasValue ? "0" : "-50%")}
-  );
-  font-size: ${(props) => (props.focussed || props.hasValue ? "12px" : "24px")};
-  color: ${(props) => (props.focussed || props.hasValue ? "#999" : "#fff")};
-  transition: all 0.3s ease;
-  pointer-events: none;
-  font-size: 20px;
-  color: #ffffff;
   position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #aaa;
+  transition: all 0.2s ease;
+  line-hieght: 1.5;
+  transition-duration: 250ms;
+  pointer-events: none;
+  transition-timing-function: cubic-bezier(0.9, 0, 0.51, 1);
+
+  ${(props) =>
+    props.focused &&
+    css`
+      top: 25%;
+      left: 13px;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+    `}
 `;
 
 export const Input = styled.input`
   width: 100%;
   padding: 10px;
-  font-size: 18px;
+  font-size: 14px;
   border: none;
   border-radius: 4px;
   outline: none;
   box-sizing: border-box;
   background-color: transparent;
   color: #fff;
+  line-height: 1.4;
+  width: 100%;
+  font-weight: 400;
 `;
 
 export const EmailContainer = styled.div`
-  border: 1px solid #f2f4f4;
+  border: 0.5px solid #f2f4f4;
   padding: 5px;
   position: relative;
-  width: auto;
-  height: auto;
+  width: 332px;
+  height: 30px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  border-radius: 5px;
+  border-radius: 3px;
+  @media screen and (max-width: 768px) {
+    margin-top: 19px;
+    width: 300px;
+    align-itmes: center;
+  }
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    width: 330px;
+  }
 `;
 
 export const FormContiaer = styled.div`
@@ -125,4 +164,44 @@ export const FormContiaer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+export const GetStartedContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: cneter;
+  justify-content: center;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+export const GetButton = styled.button`
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-height: 30px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  background: rgb(229, 9, 20);
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  fill: currentcolor;
+  position: relative;
+  display: flex;
+  aligen-items: center;
+`;
+
+export const ButtonContainer = styled.div`
+  height: auto;
+  width: auto;
+  padding-left: 6px;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
 `;
