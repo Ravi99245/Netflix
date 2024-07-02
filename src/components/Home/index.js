@@ -25,6 +25,9 @@ import {
   SecondContainer,
   TvImage,
   DetailsContainer,
+  EnjoyTvContainer,
+  VideoContainer,
+  Video,
 } from "./styledComponent";
 
 class Home extends Component {
@@ -94,21 +97,28 @@ class Home extends Component {
         <Line />
         <SecondContainer>
           <DetailsContainer>
-            <div>
-              <h1>Enjoy on Your TV</h1>
-              <p>
+            <EnjoyTvContainer>
+              <Heading>Enjoy on Your TV</Heading>
+              <AnyWhereText>
                 Watch on smart TVs, PlayStations, Xbox, chromecast, AppleTV,
                 Blu-ray players and more.
-              </p>
-            </div>
-            <div>
+              </AnyWhereText>
+            </EnjoyTvContainer>
+            <VideoContainer>
               <TvImage
                 src="https://res.cloudinary.com/dxa4rbmrj/image/upload/v1719901371/tv_eeallg.png"
                 alt="tv"
               />
-            </div>
+              <Video data-uia="vidoe" autoPlay playsInline muted loop>
+                <source
+                  src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v"
+                  type="video/mp4"
+                />
+              </Video>
+            </VideoContainer>
           </DetailsContainer>
         </SecondContainer>
+        <Line />
       </MainContainer>
     );
   }

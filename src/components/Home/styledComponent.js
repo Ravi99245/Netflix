@@ -42,6 +42,9 @@ export const TopContianer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 768px) {
+    min-height: 60vh;
+  }
 `;
 
 export const BackgroundImage = styled.img`
@@ -59,6 +62,10 @@ export const HeadingContainer = styled.div`
   margin: auto;
   margin-top: 20rem;
   text-align: center;
+  @media screen and (max-width: 768px) {
+    height: 40%;
+    margin-top: 2rem;
+  }
 `;
 
 export const Heading = styled.h1`
@@ -208,20 +215,80 @@ export const ButtonContainer = styled.div`
 `;
 
 export const SecondContainer = styled.div`
-  width: 100%;
+  width: 98vw;
   height: 50vh;
   padding: 4.5rem 0;
+  background-color: #000000;
+  color: #fff;
+  @media screen and (max-width: 768px) {
+    padding: 3.5rem 0;
+  }
 `;
 
 export const DetailsContainer = styled.div`
-  width: 100%;
+  width: auto;
+  height: 100%;
   margin: 0 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 1.5rem;
+  }
 `;
 
 export const TvImage = styled.img`
-  width: 470px;
+  width: 70%;
+  display: block;
+  height: auto;
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
+`;
+
+export const EnjoyTvContainer = styled.div`
+  width: 50%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
+`;
+
+export const VideoContainer = styled.div`
+  position: relative;
+  width: 50%;
+  height: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+export const Video = styled.video`
+  z-index: 1;
+  position: absolute;
+  top: -12%; /* Adjust based on the TV screen area */
+  left: 26%; /* Adjust based on the TV screen area */
+  width: auto; /* Adjust based on the TV screen area */
+  height: 120%; /* Adjust based on the TV screen area */
+  display: inline-block;
+  vertical-align: baseline;
+  padding: 0px;
+  margin: 0px;
+  @media screen and (max-width: 768px) {
+    height: 83%;
+    top: 5%;
+    left: 18%;
+  }
+  @media screen and (min-width: 1440px) {
+    height: 115%;
+    top: -11.5%;
+    left: 25%;
+  }
 `;
