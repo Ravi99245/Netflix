@@ -8,6 +8,7 @@ export const MainContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   unicode-bidi: isolate;
+  flex-wrap: wrap;
 `;
 
 export const HeaderContainer = styled.div`
@@ -102,7 +103,7 @@ export const Label = styled.label`
   font-size: 1rem;
   color: #aaa;
   transition: all 0.2s ease;
-  line-hieght: 1.5;
+  line-height: 1.5;
   transition-duration: 250ms;
   pointer-events: none;
   transition-timing-function: cubic-bezier(0.9, 0, 0.51, 1);
@@ -190,7 +191,7 @@ export const GetButton = styled.button`
   fill: currentcolor;
   position: relative;
   display: flex;
-  aligen-items: center;
+  align-items: center;
 `;
 
 export const ButtonContainer = styled.div`
@@ -204,4 +205,23 @@ export const ButtonContainer = styled.div`
     align-items: center;
     margin-top: 15px;
   }
+`;
+
+export const SecondContainer = styled.div`
+  width: 100%;
+  height: 50vh;
+  padding: 4.5rem 0;
+`;
+
+export const DetailsContainer = styled.div`
+  width: 100%;
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const TvImage = styled.img`
+  width: 470px;
 `;

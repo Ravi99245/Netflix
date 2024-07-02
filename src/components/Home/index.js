@@ -3,6 +3,7 @@ import { Component } from "react";
 import { FaAngleRight } from "react-icons/fa6";
 
 import Header from "../Header/index";
+import Line from "../Line/index";
 
 import {
   MainContainer,
@@ -21,6 +22,9 @@ import {
   GetStartedContainer,
   GetButton,
   ButtonContainer,
+  SecondContainer,
+  TvImage,
+  DetailsContainer,
 } from "./styledComponent";
 
 class Home extends Component {
@@ -64,7 +68,7 @@ class Home extends Component {
                 <GetStartedContainer>
                   <EmailContainer>
                     <>
-                      <Label htmlfof="email" focused={focused || email}>
+                      <Label htmlFor="email" focused={focused || email}>
                         Email address
                       </Label>
                       <Input
@@ -87,6 +91,24 @@ class Home extends Component {
             </FormContiaer>
           </HeadingContainer>
         </TopContianer>
+        <Line />
+        <SecondContainer>
+          <DetailsContainer>
+            <div>
+              <h1>Enjoy on Your TV</h1>
+              <p>
+                Watch on smart TVs, PlayStations, Xbox, chromecast, AppleTV,
+                Blu-ray players and more.
+              </p>
+            </div>
+            <div>
+              <TvImage
+                src="https://res.cloudinary.com/dxa4rbmrj/image/upload/v1719901371/tv_eeallg.png"
+                alt="tv"
+              />
+            </div>
+          </DetailsContainer>
+        </SecondContainer>
       </MainContainer>
     );
   }
