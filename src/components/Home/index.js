@@ -4,6 +4,7 @@ import { FaAngleRight } from "react-icons/fa6";
 
 import Header from "../Header/index";
 import Line from "../Line/index";
+import ThirdContainer from "../ThirdContainer/index";
 
 import {
   MainContainer,
@@ -118,6 +119,8 @@ class Home extends Component {
             </VideoContainer>
           </DetailsContainer>
         </SecondContainer>
+        <Line />
+        <ThirdContainer />
         <Line />
       </MainContainer>
     );

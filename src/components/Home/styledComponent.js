@@ -244,6 +244,7 @@ export const TvImage = styled.img`
   width: 70%;
   display: block;
   height: auto;
+  z-index: 2;
   @media screen and (max-width: 768px) {
     width: 90%;
   }
@@ -273,14 +274,15 @@ export const VideoContainer = styled.div`
 export const Video = styled.video`
   z-index: 1;
   position: absolute;
-  top: -12%; /* Adjust based on the TV screen area */
-  left: 26%; /* Adjust based on the TV screen area */
-  width: auto; /* Adjust based on the TV screen area */
-  height: 120%; /* Adjust based on the TV screen area */
+  top: -18%; /* Adjust based on the TV screen area */
+  left: 15%; /* Adjust based on the TV screen area */
+  width: 70%; /* Adjust based on the TV screen area */
+  height: 130%; /* Adjust based on the TV screen area */
   display: inline-block;
   vertical-align: baseline;
   padding: 0px;
   margin: 0px;
+  overflow: hidden;
   @media screen and (max-width: 768px) {
     height: 83%;
     top: 5%;
