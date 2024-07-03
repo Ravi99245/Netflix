@@ -5,6 +5,9 @@ import { FaAngleRight } from "react-icons/fa6";
 import Header from "../Header/index";
 import Line from "../Line/index";
 import ThirdContainer from "../ThirdContainer/index";
+import FourthContainer from "../FourthContainer/index";
+import KidsContainer from "../KidsContainer/index";
+import QwestionsContaner from "../QwestionsContaner/index";
 
 import {
   MainContainer,
@@ -122,6 +125,11 @@ class Home extends Component {
         <Line />
         <ThirdContainer />
         <Line />
+        <FourthContainer />
+        <Line />
+        <KidsContainer />
+        <Line />
+        <QwestionsContaner />
       </MainContainer>
     );
   }

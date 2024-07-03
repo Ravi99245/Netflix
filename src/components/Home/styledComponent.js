@@ -286,7 +286,7 @@ export const Video = styled.video`
   @media screen and (max-width: 768px) {
     height: 83%;
     top: 5%;
-    left: 18%;
+    left: 14.5%;
   }
   @media screen and (min-width: 1440px) {
     height: 115%;
