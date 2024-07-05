@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { IoAdd } from "react-icons/io5";
 
 import {
   Item,
@@ -7,6 +6,8 @@ import {
   SpanElement,
   AnswerContainer,
   Answer,
+  Plus,
+  Close,
 } from "./styledComponent";
 class ListItem extends Component {
   state = { showAnswer: false, focus: false };
@@ -27,14 +28,13 @@ class ListItem extends Component {
 
   render() {
     const { showAnswer, focus } = this.state;
-    console.log(focus);
     const { card } = this.props;
     const { qwestion, answer } = card;
     return (
       <Item onFocus={this.updateFocus} onBlur={this.updateFocusToFalse}>
         <Button type="button" $isFocused={focus} onClick={this.showAnswer}>
           <SpanElement>{qwestion}</SpanElement>
-          <IoAdd />
+          {showAnswer ? <Close /> : <Plus />}
         </Button>
         {showAnswer && (
           <AnswerContainer showAnswer={showAnswer}>

@@ -168,3 +168,7 @@ export const ButtonContainer = styled.div`
     margin-top: 15px;
   }
 `;
+
+export const India = styled.div`
+  margin-top: 2rem;
+`;

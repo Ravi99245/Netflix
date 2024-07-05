@@ -1,5 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
+import { IoAdd, IoClose } from "react-icons/io5";
+
 export const Item = styled.li`
   width: 100%;
   margin: 0 0 0.5rem 0;
@@ -62,7 +64,7 @@ export const AnswerContainer = styled.div`
   padding: 1rem;
   overflow: hidden; /* Hide content initially */
   max-height: 0px;
-  animation: ${(props) => (props.showAnswer ? slideDown : slideUp)} 0.7s ease
+  animation: ${(props) => (props.showAnswer ? slideDown : slideUp)} 0.9s ease
     forwards;
 `;
 
@@ -70,5 +72,23 @@ export const Answer = styled.span`
   font-size: 1.5rem;
   @media screen and (max-width: 768px) {
     font-size: 1rem;
+  }
+`;
+
+export const Plus = styled(IoAdd)`
+  width: 36px;
+  height: 36px;
+  @media screen and (max-width: 768px) {
+    width: 24px;
+    height: 24px;
+  }
+`;
+
+export const Close = styled(IoClose)`
+  width: 36px;
+  height: 36px;
+  @media screen and (max-width: 768px) {
+    width: 24px;
+    height: 24px;
   }
 `;

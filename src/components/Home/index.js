@@ -8,6 +8,7 @@ import ThirdContainer from "../ThirdContainer/index";
 import FourthContainer from "../FourthContainer/index";
 import KidsContainer from "../KidsContainer/index";
 import QwestionsContaner from "../QwestionsContaner/index";
+import FooterSection from "../FooterSection/index";
 
 import {
   MainContainer,
@@ -130,6 +131,8 @@ class Home extends Component {
         <KidsContainer />
         <Line />
         <QwestionsContaner />
+        <Line />
+        <FooterSection />
       </MainContainer>
     );
   }
